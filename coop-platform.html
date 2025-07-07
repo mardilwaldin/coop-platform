@@ -1,129 +1,242 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>منصة التعاونيات المغربية</title>
   <style>
+    /* --- تصميم عام --- */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
       background-color: #f8f5f0;
       color: #333;
-      margin: 0;
-      padding: 0;
     }
     header {
       background-color: #6d8a61;
       color: white;
-      padding: 1rem;
+      padding: 20px 10px;
       text-align: center;
     }
     nav {
       background-color: #f0e6d2;
-      padding: 0.5rem 1rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     nav a {
-      text-decoration: none;
+      padding: 15px 20px;
       color: #6d8a61;
+      text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.3s;
     }
-    .hero {
-      background-image: url('banner.jpg');
-      background-size: cover;
-      background-position: center;
+    nav a:hover {
+      background-color: #6d8a61;
       color: white;
-      padding: 4rem 2rem;
-      text-align: center;
     }
-    .section {
-      padding: 2rem;
+    section {
+      padding: 20px 10px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #4a5a39;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
     .card {
-      background-color: white;
+      background: white;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 1rem;
-      margin: 1rem 0;
+      padding: 15px;
+      width: 280px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    button.buy-btn {
+      background-color: #6d8a61;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    button.buy-btn:hover {
+      background-color: #4a5a39;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #4a5a39;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    form button {
+      background-color: #6d8a61;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #4a5a39;
     }
     footer {
       background-color: #6d8a61;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 15px 10px;
+      margin-top: 30px;
+    }
+    /* --- استجابة للشاشات الصغيرة --- */
+    @media (max-width: 600px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        padding: 10px;
+      }
+      .card {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>منصة التعاونيات المغربية</h1>
-    <p>قصص حقيقية. منتجات محلية. دعم مباشر للتعاونيات</p>
-  </header>
 
-  <nav>
-    <a href="#">الرئيسية</a>
-    <a href="#coops">التعاونيات</a>
-    <a href="#products">المنتجات</a>
-    <a href="#stories">قصص النجاح</a>
-    <a href="#contact">اتصل بنا</a>
-  </nav>
+<header>
+  <h1>منصة التعاونيات المغربية</h1>
+  <p>دعم المنتجات المحلية وتشجيع التعاونيات</p>
+</header>
 
-  <section class="hero">
-    <h2>اشري من الأصل، دعم التعاونيات المحلية</h2>
-    <p>من جبال الأطلس حتى سواحل الصحراء – كل منتج وراه حكاية</p>
-  </section>
+<nav>
+  <a href="#coops">التعاونيات</a>
+  <a href="#products">المنتجات</a>
+  <a href="#contact">اتصل بنا</a>
+</nav>
 
-  <section class="section" id="coops">
-    <h2>تعاونيات مختارة</h2>
+<section id="coops">
+  <h2>تعاونياتنا</h2>
+  <div class="cards">
     <div class="card">
-      <h3>تعاونية تافوغالت</h3>
-      <p>إنتاج زيت الزيتون العضوي وتقطير الأعشاب</p>
+      <img src="https://via.placeholder.com/280x180?text=تعاونية+زيت+الزيتون" alt="تعاونية زيت الزيتون">
+      <h3>تعاونية زيت الزيتون</h3>
+      <p>إنتاج زيت الزيتون الطبيعي والعناية به</p>
     </div>
     <div class="card">
-      <h3>تعاونية النور</h3>
+      <img src="https://via.placeholder.com/280x180?text=تعاونية+العسل" alt="تعاونية العسل">
+      <h3>تعاونية العسل</h3>
+      <p>عسل طبيعي عالي الجودة من جبال الأطلس</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/280x180?text=تعاونية+الصابون" alt="تعاونية الصابون">
+      <h3>تعاونية الصابون</h3>
       <p>صناعة الصابون الطبيعي والعطور التقليدية</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="products">
-    <h2>منتجاتنا</h2>
+<section id="products">
+  <h2>منتجاتنا</h2>
+  <div class="cards">
     <div class="card">
-      <h3>عسل حر الأطلس</h3>
-      <p>500g - طبيعي 100% - 85 درهم</p>
+      <img src="https://via.placeholder.com/280x180?text=زيت+الزيتون" alt="زيت الزيتون">
+      <h3>زيت الزيتون العضوي</h3>
+      <p>500 مل - سعر: 80 درهم</p>
+      <button class="buy-btn">اشترِ الآن</button>
     </div>
     <div class="card">
-      <h3>أملو بزيت الأركان</h3>
-      <p>250g - مذاق تقليدي أصيل - 60 درهم</p>
+      <img src="https://via.placeholder.com/280x180?text=عسل" alt="عسل">
+      <h3>عسل الأطلس</h3>
+      <p>250 غ - سعر: 90 درهم</p>
+      <button class="buy-btn">اشترِ الآن</button>
     </div>
-  </section>
-
-  <section class="section" id="stories">
-    <h2>قصص النجاح</h2>
     <div class="card">
-      <p>“من مرأة واحدة في القرية، إلى فريق إنتاج من 12 امرأة – بدينا بحلم، وحققناه مع المنصة.”</p>
-      <p><strong>تعاونية إزران</strong></p>
+      <img src="https://via.placeholder.com/280x180?text=صابون" alt="صابون طبيعي">
+      <h3>صابون طبيعي</h3>
+      <p>100 غ - سعر: 40 درهم</p>
+      <button class="buy-btn">اشترِ الآن</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="contact">
-    <h2>اتصل بنا</h2>
-    <p>للانضمام أو طرح الأسئلة: <a href="mailto:contact@coops.ma">contact@coops.ma</a></p>
-  </section>
-<button id="buyBtn" style="padding:10px 20px; background-color:#6d8a61; color:white; border:none; border-radius:5px; cursor:pointer; font-size:16px;">
-  اشترِ الآن
-</button>
+<section id="contact">
+  <h2>اتصل بنا</h2>
+  <form id="contactForm">
+    <label for="name">الإسم الكامل</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">البريد الإلكتروني</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">رسالتك</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">إرسال</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 منصة التعاونيات المغربية. جميع الحقوق محفوظة.</p>
+</footer>
 
 <script>
-  const btn = document.getElementById('buyBtn');
-  btn.addEventListener('click', () => {
-    btn.style.backgroundColor = '#4a5a39';
-    alert('شكراً على اهتمامك! غادي نتواصل معك قريباً.');
+  // كود بسيط لمعالجة إرسال نموذج التواصل
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('شكراً على تواصلك معنا، سنرد عليك قريباً!');
+    this.reset();
+  });
+
+  // إضافة تفاعل أزرار "اشترِ الآن"
+  const buyButtons = document.querySelectorAll('.buy-btn');
+  buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      alert('شكراً على اهتمامك! سيتم التواصل معك لتأكيد الطلب.');
+    });
   });
 </script>
-  <footer>
-    <p>&copy; 2025 منصة التعاونيات المغربية - جميع الحقوق محفوظة</p>
-  </footer>
+
 </body>
 </html>
